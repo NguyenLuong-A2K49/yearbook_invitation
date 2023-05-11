@@ -17,15 +17,81 @@ html {
     /* you can include multiple font formats to ensure cross-browser compatibility */
 }
 
-#main {
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-image: url("../image/Thiết\ kế\ chưa\ có\ tên.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#login-display {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#login {
+    width: 330px;
+    height: 150px;
+    background-color: #fff;
+    border: #aad6c4 solid 5px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#username-text {
+    color:#41594f;
+    font-size: 17px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form > div > input {
+    padding: 2px;
+}
+
+#login-btn {
+    color: #000;
+    width: 70px;
+    height: 30px;
+    border: #5d7c6f solid 2px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #d6fced;
+    margin-top: 10px;
+}
+
+#login-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
     flex-direction: column;
     /* flex: 1; */
     height: 100vh;
     width: 100vw;
-    background: url("../image/Thiết\ kế\ chưa\ có\ tên.png") no-repeat center center fixed;
-    background-size: cover;
-    /* background-color: #F8FAF9; */
+}
+
+.ml-7 {
+    margin-left: -7px;
 }
 
 #nav {
@@ -61,20 +127,20 @@ html {
     align-items: center;
     opacity: 0;
     animation: FadeIn 3s 1.5s ease forwards,
-                Beat 3s ease infinite;
+                Beat 2s ease infinite;
 }
 
-/* @keyframes Beat {
+@keyframes Beat {
     0% {
         width: 90%;
     } 30% {
-        width: 89%;
+        width: 89.5%;
     } 60% {
-        width: 91%;
+        width: 90.5%;
     } 100% {
         width: 90%;
     }
-} */
+}
 
 @keyframes FadeIn {
     from {
@@ -161,10 +227,18 @@ html {
 
 }
 
+.box-name-container {
+    width: 650px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .my-yearbook {
     font-family: 'Pacifico';
     font-size: calc(var(--font-size) * 2.5);
-    margin-top: 10px;
+    /* margin-top: 10px; */
     color: #5d7c6f;
     opacity: 0;
     animation: FadeInScroll 3s 3s ease forwards;
@@ -259,15 +333,23 @@ html {
     justify-content: center;
 }
 
-.message {
+.message-and-info {
     display: flex;
-    margin-top: 32px;
+    margin-top: 16px;
+    flex-direction: row;
+}
+
+.message, .info {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     opacity: 0;
     animation: FadeInScroll 3s 9s ease forwards;
 
 }
 
-.message:hover > i {
+.message:hover > div > i, .info:hover > i {
     /* font-size: calc(var(--font-size) * 1.6); */
     opacity: 0.7;
     cursor: pointer;
@@ -295,11 +377,17 @@ html {
     color: #fff;
 }
 
+#message-subtitle {
+    font-size: 11px;
+    color: #41594f;
+    margin-top: 2px;
+}
+
 #modal {
     display: none;
     height: 100vh;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
@@ -327,7 +415,27 @@ html {
     align-items: center;
 }
 
-.message-box {
+#message-box {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 93%;
+    height: 90%;
+    background-color: #d6fced;
+    border: #5d7c6f solid 3px;
+    border-radius: 15px;
+    font-size: 17px;
+    padding: 14px;
+    line-height: 1.5;
+    color: #41594f;
+    overflow: auto;
+}
+
+.main-message {
+    /* overflow: hidden; */
+}
+
+#info-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -340,6 +448,7 @@ html {
     padding: 14px;
     line-height: 1.5;
     color: #41594f;
+    overflow: auto;
 }
 
 .signature-container {
@@ -369,6 +478,12 @@ html {
 .modal-close-btn:hover {
     cursor: pointer;
     opacity: 0.7;
+}
+
+.laptop-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .laptop-image {

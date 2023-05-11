@@ -2,6 +2,14 @@
     * {
         --font-size: 17px;
     }
+    .box-name-container {
+        width: 500px;
+        height: 80px;
+    }
+
+    .yearbook-time {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 740px) {
@@ -16,10 +24,12 @@
     #nav {
         flex: 0;
         padding: 20px;
+        font-size: 28px;
     }
 
     .box {
         width: 70%;
+        height: 68vw;
     }
 
     #main-image {
@@ -33,13 +43,33 @@
 
     .footer {
         flex: 0;
-        margin-bottom: 30px;
+        padding: 30px;
+    }
+
+    .modal-container {
+        width: 670px;
+    }
+
+    .my-yearbook:hover {
+        font-size: calc(var(--font-size) * 2.5);
     }
 }
 
 @media (max-width: 739px) {
     * {
-        --font-size: 10px;
+        --font-size: 15px;
+    }
+
+    #background {
+        background-image: url("../image/bg-portrait.png");
+    }
+
+    .search-btn, .close-btn {
+        padding: 13px 0;
+    }
+
+    .box-name {
+        padding: 10px 0;
     }
 
     #content {
@@ -52,7 +82,8 @@
     }
 
     .box {
-        width: 70%;
+        width: 90%;
+        height: 75vw;
     }
 
     #main-image {
@@ -60,12 +91,77 @@
     }
 
     #main-content {
-        margin-top: 40px;
+        margin-top: 25px;
         flex: 0;
+    }
+
+    .yearbook-time {
+        margin-top: 20px;
+    }
+
+    .location {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .message {
+        margin-top: 20px;
     }
 
     .footer {
         flex: 0;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .box-name-container {
+        width: auto;
+        height: auto;
+    }
+
+    .my-yearbook {
+        font-size: calc(var(--font-size) * 2);
+    }
+
+    .my-yearbook:hover {
+        font-size: calc(var(--font-size) * 2);
+    }
+
+    .modal-container {
+        /* display: flex; */
+        /* flex: 1; */
+        width: 92%;
+        height: 450px;
+        max-height: 92%;
+    }
+
+    #message-box {
+        width: 93%;
+        height: 90%;
+        font-size: 16px;
+        line-height: 1.4;
+        /* overflow: auto; */
+    }
+
+    .main-message {
+        /* overflow: auto; */
+    }
+
+    .laptop-image {
+        width: 80%;
+        margin: 10px;
+    }
+
+    .add {
+        height: 52.5px;
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 1000px) and (max-height: 500px) {
+    .modal-container {
+        height: 350px;
+        max-height: 90%;
     }
 }
